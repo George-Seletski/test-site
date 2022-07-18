@@ -39,7 +39,7 @@
        <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for item in news %}
           <div class="col" style="margin: 10px 0 10px 0;">
-            <div class="card h-100" style="border:0px;">
+            <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
               {% if item.photo %}
                 <img src="{{ item.photo.url }}" class="card-img-top" alt="#" style="border-radius: 2%;" />
               {% else %}
