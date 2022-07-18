@@ -44,31 +44,27 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for item in news %}
           <div class="col" style="margin: 10px 0 10px 0;">
-            <div class="card h-100" style="border:0px;">
+            <div class="card" style="border:0px;">
               {% if item.photo %}
                 <img src="{{ item.photo.url }}" class="card-img-top" alt="#" style="border-radius: 2%;" />
               {% else %}
                 <img src="https://picsum.photos/500/500" class="card-img-top" alt="#" style="border-radius: 2%;" />
               {% endif %}
                <div class="card-img-overlay" >
-                    <h4 class="card-title" style="color:#fff; border-bottom: 2px solid #fff;">{{ item.title }}
+                  <div class="card-title" style="border: 0px;">
+                    <h4 class="card-title" style="color:#fff;">{{ item.title }}
                     </h4>
-                    <div class="container">
-                          <ul class="d-flex list-unstyled" style="margin: 18em 0 0 0;">
-                            <li class="me-auto">
-                            <h5>
-                              <span class="badge bg-secondary" style="">{{ item.category }}</span>
-                            </h5>
-                            </li>
-                            <li class="d-flex align-items-left">
-                                <a href="#" class="btn btn-primary">Read more</a>
-                            </li>
-                          </ul>
-                          <h5>
-                            <i class="bi bi-calendar4-week" style="color:#fff;"></i>
-                            <span class="card-text" style="color: white; font-size: 15px;">{{ item.created_at|date:'Y-m-d H:m' }}</span>
-                          </h5>
-                      </div>
+                  </div>
+
+                    <div class="card-text">
+                       <span class="badge bg-secondary mt-2 mb-3" style="">{{ item.category }}</span>
+                    </div>
+                    <div class="card-text">
+                      <h5>
+                        <i class="bi bi-calendar4-week" style="color:#fff;"></i>
+                         <span class="card-text" style="text-align:center; color: white;">{{ item.created_at|date:'Y-m-d H:m' }}</span>
+                      </h5>
+                    </div>
                 <!--<a href="#" class="btn btn-primary">Read more</a>-->
               </div>
             </div>
