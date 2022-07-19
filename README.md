@@ -20,7 +20,7 @@ This is web application for making posts. It is my own blog.
 
 ## The map of the project
 <hr>
-<img href="https://drive.google.com/file/d/1nAIeMgdsZghB_Y5q1EIK03ScvVSImi7b/view?usp=sharing"></img>
+<img src="https://drive.google.com/file/d/1nAIeMgdsZghB_Y5q1EIK03ScvVSImi7b/view?usp=sharing"></img>
 <br>
 
 ## Commands to start app
