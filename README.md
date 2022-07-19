@@ -1,11 +1,26 @@
 # My Django Blog
 
+### Content:
 <ul>
 <li>
-<a href="#commands-to-start-app">Commands</a>
+<a href="#the-purpose-of-the-project">The purpose of the project</a>
+</li>
+<li>
+    <a href="#commands-to-start-app">Commands</a>
 </li>
 </ul>
 
+<br>
+
+## The purpose of the project
+<hr>
+This is web application for making posts. It is my own blog. 
+
+<br>
+
+## The map of the project
+<hr>
+<img href="https://drive.google.com/file/d/1nAIeMgdsZghB_Y5q1EIK03ScvVSImi7b/view?usp=sharing"></img>
 <br>
 
 ## Commands to start app
