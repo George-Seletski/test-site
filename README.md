@@ -20,7 +20,7 @@ This is web application for making posts. It is my own blog.
 
 ## The map of the project
 <hr>
-<img src="test-site\test-site-map.drawio.png"></img>
+
 <br>
 
 ## Commands to start app
