@@ -1,7 +1,9 @@
 # My Django Blog
 
 <ul>
-<li>[Commands](#commands-to-start-app)</li>
+<li>
+<a href="#commands-to-start-app">Commands</a>
+</li>
 </ul>
 
 <br>
