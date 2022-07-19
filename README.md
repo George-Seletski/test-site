@@ -13,18 +13,15 @@
 <br>
 
 ## The purpose of the project
-<hr>
 This is web application for making posts. It is my own blog. 
 
 <br>
 
 ## The map of the project
-<hr>
 
 <br>
 
 ## Commands to start app
-<hr>
 
 ```
 .\venv\Scripts\activate
