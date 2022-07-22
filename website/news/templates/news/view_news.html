@@ -7,17 +7,18 @@
 {% block content %}
 
 <div class="row">
-          <div class="col" style="margin: 10px 0 10px 0;">
-
-            <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
+    <div class="col" style="margin: 10px 0 10px 0;">
+        <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
                 
-       <div class="embed-responsive embed-responsive-4by3">
-              {% if news_item.photo %}
-                <img src="{{ news_item.photo.url }}" class="img-fluid" alt="#" style=" border-radius: 1%;" />
-              {% else %}
-                <img src="https://picsum.photos/500/500" class="card-img-top" alt="#" style="border-radius: 2%;" />
-              {% endif %}
-       <div class="embed-responsive embed-responsive-4by3">
+            <div class="card-body">
+                <div class="card"  style="background-color:dimgrey; border: 0px;">
+                {% if news_item.photo %}
+                    <img src="{{ news_item.photo.url }}" class=" img-fluid" alt="#" style="margin: 20px 30% 20px 30%; border-radius: 1%;  " />
+                {% else %}
+                    <img src="https://picsum.photos/500/500" class="card-img-top" alt="#" style="border-radius: 1%;" />
+                {% endif %}
+                </div>
+            </div>
                  
               <div class="card-body">
                 <h4 class="card-title">{{ news_item.title }}
