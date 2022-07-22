@@ -21,7 +21,7 @@
                 </h5>
                 
                 <p class="card-text">{{ item.content|safe|linebreaksbr|truncatewords:50 }}</p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>

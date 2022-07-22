@@ -28,3 +28,8 @@ def get_category(request, category_id):
         'category':category,
     }
     return render(request, 'news/categories.html',context)
+
+def view_news(request, news_id):
+    news_item = News.objects.get(pk=news_id)
+    return render(request, 'news/view_news.html', {"news_item": news_item})
+    
