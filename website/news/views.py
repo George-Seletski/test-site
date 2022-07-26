@@ -35,3 +35,5 @@ def view_news(request, news_id):
     categories = Category.objects.all()
     return render(request, 'news/view_news.html', {"news_item": news_item, 'categories': categories})
     
+def add_news(request):
+    return render(request, 'news/add_news.html')
