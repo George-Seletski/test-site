@@ -8,17 +8,17 @@
 
 <div class="row">
     <div class="col" style="margin: 10px 0 10px 0;">
-        <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
-                
-            <div class="card-body">
-                <div class="card"  style="background-color:dimgrey; border: 0px;">
+        <div class="card  h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
+              
+                <div class="card"  style="max-width: max-content; border: 0px;">
                 {% if news_item.photo %}
-                    <img src="{{ news_item.photo.url }}" class=" img-fluid" alt="#" style="margin: 20px 30% 20px 30%; border-radius: 2%;  " />
+                    <img src="{{ news_item.photo.url }}" class="rounded d-block" alt="#" />
                 {% else %}
-                    <img src="https://picsum.photos/500/500" class="card-img-top" alt="#" style="width: 500px; margin: 20px 30% 20px 30%; border-radius: 2%;" />
+                    <img src="https://picsum.photos/2000/500" class="rounded d-block" alt="#" />
                 {% endif %}
+           
                 </div>
-            </div>
+         
                  
               <div class="card-body">
                 <h4 class="card-title">{{ news_item.title }}

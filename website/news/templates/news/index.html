@@ -7,9 +7,9 @@
           <div class="col" style="margin: 10px 0 10px 0;">
             <div class="card h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
               {% if item.photo %}
-                <img src="{{ item.photo.url }}" class="card-img-top" alt="#" style="border-radius: 2%;" />
+                <img src="{{ item.photo.url }}" class="rounded card-img-top img-fluid" alt="#" />
               {% else %}
-                <img src="https://picsum.photos/500/500" class="card-img-top" alt="#" style="border-radius: 2%;" />
+                <img src="https://picsum.photos/500/280" class=" rounded card-img-top" alt="#" />
               {% endif %}
               <div class="card-body">
                 <h4 class="card-title">{{ item.title }}
