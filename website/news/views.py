@@ -1,9 +1,11 @@
 from hashlib import new
 from unicodedata import category
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
+ 
 
 from .models import News, Category
+from .forms import NewsForm 
 # Create your views here.
 
 
@@ -36,4 +38,13 @@ def view_news(request, news_id):
     return render(request, 'news/view_news.html', {"news_item": news_item, 'categories': categories})
     
 def add_news(request):
-    return render(request, 'news/add_news.html')
+    if request.method == 'POST':
+        form = NewsForm(request.POST)
+        if form.is_valid():
+            # print(form.cleaned_data)
+            news = News.objects.create(**form.cleaned_data)
+            return redirect(news)
+            
+    else:
+        form = NewsForm()
+    return render(request, 'news/add_news.html', {'form':form})

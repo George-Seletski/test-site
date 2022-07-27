@@ -8,6 +8,18 @@ Add news :: {{ block.super }}
 
 <h1> Add News</h1>
 
+<form action="{% url 'add_news' %}" method="post">
+
+{% csrf_token %}
+{{ form.as_p }} <!--output elements with tag p-->  
+
+{{form.none_field.errors}}
+  <div class="col-md-6 mt-3">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
+
+
 {% endblock content %}
 
 
