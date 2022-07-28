@@ -1,17 +1,19 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 # Create your models here.
 
 
 class News(models.Model):
-    title = models.CharField(max_length=150)
-    content = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    is_published = models.BooleanField(default=True)
-    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
+    title = models.CharField(max_length=150, verbose_name='Title')
+    content = models.TextField(blank=True, verbose_name='Content')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Data of publishing')
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name='Date of upadte')
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Photo')
+    is_published = models.BooleanField(default=True, verbose_name='Published')
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Category')
 
     #id -INT
     #title -VARCHAR
