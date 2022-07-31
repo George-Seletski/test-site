@@ -1,6 +1,9 @@
+from turtle import title
 from django import forms
-from .models import Category, News
+from django.core.exceptions import ValidationError
 
+from .models import Category, News
+import re
 
 class NewsForm(forms.ModelForm):
     class Meta:
@@ -12,24 +15,12 @@ class NewsForm(forms.ModelForm):
             'content': forms.Textarea(attrs={"class": "form-control"}),
             'is_published': forms.CheckboxInput(attrs={"class": "form-check-input"}),
             'category': forms.Select(attrs={"class": "form-select"}),
-            
-            
         }
         
-    '''title = forms.CharField(max_length=150, label='The title of the news:',
-                            widget=forms.TextInput(attrs={
-                                "class": "form-control", }))
-    
-    content = forms.CharField(label='Content of the news:', required=False,
-                              widget=forms.Textarea(attrs={
-                                  "class": "form-control"}))
-    
-    is_published = forms.BooleanField(label='Published:', initial=True, widget=forms.CheckboxInput(
-        attrs={
-            "class": "form-check-input"}))
-    
-    category = forms.ModelChoiceField(empty_label='Choose Category', label='Category:', queryset=Category.objects.all(
-    ), widget=forms.Select(attrs={
-        "class": "form-select"}))
-    '''
+    def clean_title(self):
+        title = self.cleaned_data['title']
+        if re.match(r'\d', title):
+            raise ValidationError("Title can't begin with  numbers")
+        return title
+        
 
