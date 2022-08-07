@@ -1,7 +1,7 @@
 
 p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 *,
@@ -21,15 +21,22 @@ section{
 .errorlist {
     color: red;
 }
+.d-flex{
+
+}
+
+.card{
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+}
 
 @media (min-width: 768px) {
-
-        .row>* {
+    .row>* {
             flex-shrink: 0;
             width: 100%;
             max-width: 100%;
             padding-right: calc(var(--bs-gutter-x) * .5);
             padding-left: calc(var(--bs-gutter-x) * .5);
             margin-top: var(--bs-gutter-y);
-        }
+    }
 }
