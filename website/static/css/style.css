@@ -11,19 +11,16 @@ p {
 }
 
 body{
-    background-color: #E2DCC8;
-    
-
+    background-color: #E2DCC8; 
 }
+
 section{
     display: block;
 }
 .errorlist {
     color: red;
 }
-.d-flex{
 
-}
 
 .card{
     --bs-card-spacer-y: 1rem;
