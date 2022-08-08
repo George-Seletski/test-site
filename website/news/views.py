@@ -1,5 +1,6 @@
 
 
+from pyexpat import model
 from re import template
 from statistics import mode
 from tkinter import NE
@@ -18,8 +19,13 @@ class HomeNews(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+<<<<<<< HEAD
         context['title'] = "TITILE"
         context['categories'] = Category.objects.all()
+=======
+        context["title"] = 'Main Page'
+        context["categories"] = Category.objects.all()
+>>>>>>> 8fa7c67 (fix: views)
         return context
     
     def get_queryset(self):
@@ -30,6 +36,7 @@ class NewsByCategory(ListView):
     template_name = 'news/home_news_list.html'
     context_object_name = 'news'
     
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = "TITILE"
@@ -37,6 +44,15 @@ class NewsByCategory(ListView):
         return context
     
     def get_queryset(self):
+=======
+    
+    def get_queryset(self):
+        context = {
+            'news': model,
+            'title': 'List of news',
+            'categories': Category.objects.all(),
+        }
+>>>>>>> 8fa7c67 (fix: views)
         return News.objects.filter(category_id =self.kwargs['category_id'], is_published=True)
 
 # def index(request):
