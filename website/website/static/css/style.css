@@ -10,7 +10,7 @@ p {
 }
 
 body {
-    background-color: #E2DCC8;
+    background-color: #dac78a;
 }
 
 section {
@@ -27,7 +27,7 @@ section {
     --bs-card-spacer-x: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .row>* {
         flex-shrink: 0;
         width: 100%;
