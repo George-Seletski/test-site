@@ -7,7 +7,7 @@
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for item in news %}
           <div class="col">
-            <div class="card shadow-sm" style="border:0px; height: 100%; ">
+            <div class="card shadow-sm" style="background-color:#171717; color:#fff; border:1px solid #272727; height: 100%; ">
                 {% if item.photo %}
                   <img src="{{ item.photo.url }}" class="bd-placeholder-img card-img-top" width="100%" height="50%" alt="#" />
                 {% else %}
