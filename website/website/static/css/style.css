@@ -10,17 +10,32 @@ p {
 }
 
 body {
-    background-color: #dac78a;
+    background-color: #171717;
 }
 
 section {
     display: block;
 }
 
+a{
+
+}
+
 .errorlist {
     color: red;
 }
 
+.navbar-brand{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 2.25rem;
+    
+}
+
+.navbar{
+ text-align: center;
+ background-color:#171717;
+}
 
 .card {
     --bs-card-spacer-y: 1rem;
