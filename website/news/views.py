@@ -86,3 +86,11 @@ def add_news(request):
     else:
         form = NewsForm()
     return render(request, 'news/add_news.html', {'form': form, 'categories': categories,})
+
+
+def about(request):
+    categories = Category.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'news/about.html', context)
