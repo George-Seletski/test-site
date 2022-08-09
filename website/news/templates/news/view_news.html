@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="row">
     <div class="col" style="margin: 10px 0 10px 0;">
         <div class="card  h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
@@ -15,12 +14,7 @@
                     <img src="{{ news_item.photo.url }}" class="img-fluid rounded d-block" alt="#"/>
                 {% else %}
                     <img src="https://picsum.photos/1500/500" class="img-fluid rounded d-block" alt="#" />
-                {% endif %}
-           
-                
-                </div>
-         
-                 
+                {% endif %} </div>            
               <div class="card-body">
                 <h4 class="card-title">{{ news_item.title }}
                 </h4>
