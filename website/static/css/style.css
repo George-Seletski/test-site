@@ -1,7 +1,6 @@
 p {
     margin-top: 0;
     margin-bottom: 2rem;
-        color: #fff;
 }
 
 *,
@@ -15,8 +14,8 @@ body {
 
 }
 
-h1{
-    background-color: #fff;
+h1, p{
+    color: #fff;
 }
 
 section {
