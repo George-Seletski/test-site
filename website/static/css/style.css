@@ -1,6 +1,7 @@
 p {
     margin-top: 0;
     margin-bottom: 2rem;
+     
 }
 
 *,
@@ -11,10 +12,11 @@ p {
 
 body {
     background-color: #171717;
+    font-family: 'Roboto', sans-serif;
 
 }
 
-h1, p{
+h1{
     color: #fff;
 }
 
