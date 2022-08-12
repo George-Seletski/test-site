@@ -1,5 +1,6 @@
 
 
+from msilib.schema import Class
 from pyexpat import model
 from re import template
 from statistics import mode
@@ -7,7 +8,7 @@ from tkinter import NE
 from unicodedata import category
 from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import News, Category
 from .forms import NewsForm 
@@ -33,39 +34,46 @@ class NewsByCategory(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = "TITILE"
+        context['title'] = Category.objects.get(pk=self.kwargs['category_id'])
         context['categories'] = Category.objects.all()
         return context
     
     def get_queryset(self):
-        context = {
-            'news': model,
-            'title': 'List of news',
-            'categories': Category.objects.all(),
-        }
-        return News.objects.filter(category_id =self.kwargs['category_id'], is_published=True)
+        return News.objects.filter(category_id=self.kwargs['category_id'], is_published=True)
+    
+class ViewNews(DetailView):
+    model = News
+    #pk_url_kwarg = 'news_id'
+    #template_name = 'news/news_detail.html'
+    context_object_name = 'news_item'
 
-def index(request):
-    news = News.objects.all()
-    res = '<h1>List of news:</h1>'
-    categories = Category.objects.all()
-    context = {
-        'news': news,
-        'title': 'List of news',
-        'categories':categories,
-    }
-    return render(request, 'news/index.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+    
 
-def get_category(request, category_id):
-    news = News.objects.filter(category_id = category_id)
-    categories = Category.objects.all()
-    category = Category.objects.get(pk = category_id)
-    context = {
-        'news': news,
-        'categories': categories,
-        'category':category,
-    }
-    return render(request, 'news/categories.html',context)
+# def index(request):
+#     news = News.objects.all()
+#     res = '<h1>List of news:</h1>'
+#     categories = Category.objects.all()
+#     context = {
+#         'news': news,
+#         'title': 'List of news',
+#         'categories':categories,
+#     }
+#     return render(request, 'news/index.html', context)
+
+# def get_category(request, category_id):
+#     news = News.objects.filter(category_id = category_id)
+#     categories = Category.objects.all()
+#     category = Category.objects.get(pk = category_id)
+#     context = {
+#         'news': news,
+#         'categories': categories,
+#         'category':category,
+#     }
+#     return render(request, 'news/categories.html',context)
 
 def view_news(request, news_id):
     # news_item = News.objects.get(pk=news_id)
