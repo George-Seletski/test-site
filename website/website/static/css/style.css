@@ -53,4 +53,7 @@ section {
         padding-left: calc(var(--bs-gutter-x) * .5);
         margin-top: var(--bs-gutter-y);
     }
+    .main-img {
+        font-size: 100%;
+    }
 }

@@ -7,7 +7,7 @@
 {% block content %}
 <div class="row">
     <div class="col" style="margin: 10px 0 10px 0;">
-        <div class="card  h-100 shadow-lg p-3 mb-5 bg-body rounded" style="border:0px;">
+        <div class="card  h-100 shadow-lg p-3 mb-5 bg-dark rounded" style="border:0px;">
               
                 <div class="card"  style="max-width: fit-content; border: 0px;">
                 {% if news_item.photo %}
@@ -19,10 +19,10 @@
                 <h4 class="card-title">{{ news_item.title }}
                 </h4>
                  <span class="card-text" style="color: grey; font-size: 15px;">{{ news_item.created_at|date:'Y-m-d H:m' }}</span>
-                 <h5><span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ news_item.category }}</span>
-                </h5>
+                 <h3><span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ news_item.category }}</span>
+                </h3>
                 
-                <p class="card-text">{{ news_item.content|safe|linebreaksbr}}</p>
+                <p class="card-text" style="color: white;">{{ news_item.content|safe|linebreaksbr}}</p>
               </div>
             </div>
           </div>
