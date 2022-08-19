@@ -13,7 +13,6 @@ p {
 body {
     background-color: #171717;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.35em;
 }
 
 h1{
@@ -44,7 +43,10 @@ section {
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
 }
-
+i{
+    color: #fff;
+}
+}
 @media (max-width: 768px) {
     .row>* {
         flex-shrink: 0;
@@ -54,7 +56,7 @@ section {
         padding-left: calc(var(--bs-gutter-x) * .5);
         margin-top: var(--bs-gutter-y);
     }
-        .main-img {
-            font-size: 100%;
-        }
+    .main-img {
+        font-size: 100%;
+    }
 }

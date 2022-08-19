@@ -25,7 +25,7 @@ class HomeNews(ListView):
         context['title'] = "TITILE"
         context['categories'] = Category.objects.all()
         context['news_last'] = news_lst
-        context['news_all'] = News.objects.order_by("-created_at")[1:]
+        context['news_all'] = News.objects.filter(id__lt = news_lst.id)
         return context
     
     def get_queryset(self):
@@ -33,7 +33,7 @@ class HomeNews(ListView):
     
 class NewsByCategory(ListView):
     model = News
-    template_name = 'news/home_news_list.html'
+    template_name = 'news/news_list.html'
     context_object_name = 'news'
     
     def get_context_data(self, **kwargs):
@@ -114,6 +114,6 @@ class CreateNews(CreateView):
 def about(request):
     categories = Category.objects.all()
     context = {
-        'categories': categories
+        'categories': categories,
     }
     return render(request, 'news/about.html', context)

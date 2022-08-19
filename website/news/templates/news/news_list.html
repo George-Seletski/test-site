@@ -1,30 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="py-5 container">
-<div class="album py-5">
+<section class="container">
+<div class="album ">
   <div class="container">
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
         {% for item in news %}
           <div class="col">
-            <div class="card shadow-sm" style="border:0px;  ">
+            <div class="card shadow-sm" style="background-color:#171717; color:#fff; border:1px solid #272727; height: 100%; ">
                 {% if item.photo %}
-                  <img src="{{ item.photo.url }}" class="bd-placeholder-img card-img-top" width="100%" alt="#" />
+                  <img src="{{ item.photo.url }}" class="bd-placeholder-img card-img-top" width="100%" height="50%" alt="#" />
                 {% else %}
                   <img src="https://picsum.photos/500/280" class="bd-placeholder-img card-img-top" width="100%" alt="#" />
+            
                 {% endif %}
 
-                <div class="card-body">
+                <div class="card-body" >
                       <h4 class="card-title">{{ item.title }}</h4>
                       <!--<span class="card-text" style="color: grey; font-size: 15px;">{{ item.created_at|date:'Y-m-d H:m' }}</span>-->
-                      <h5>
+                      <h4>
                         <span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ item.category }}</span>
-                      </h5>
-                      <p class="card-text">{{ item.content|safe|linebreaksbr|truncatewords:20 }}</p>
-
-                      <div class="d-flex justify-content-between align-items-center">
+                      </h4>
+                      <p class="card-text" >{{ item.content|safe|linebreaksbr|truncatewords:20 }}</p>
+                   
+                 <div class="d-flex justify-content-between align-items-center" >
                         <a href="{{ item.get_absolute_url }}" class="btn btn-sm btn-outline-secondary">View</a>
-                        <small class="text-muted">{{ item.created_at|date:'Y-m-d H:m' }}</small>
+                        <span class="text-muted" style="">{{ item.created_at|date:'Y-m-d H:m' }}</span>
                       </div>
                 </div>
             </div>

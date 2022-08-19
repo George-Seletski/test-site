@@ -43,7 +43,10 @@ section {
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
 }
-
+i{
+    color: #fff;
+}
+}
 @media (max-width: 768px) {
     .row>* {
         flex-shrink: 0;
