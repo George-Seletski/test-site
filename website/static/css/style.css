@@ -46,7 +46,7 @@ section {
 i{
     color: #fff;
 }
-}
+
 @media (max-width: 768px) {
     .row>* {
         flex-shrink: 0;
