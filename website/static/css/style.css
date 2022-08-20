@@ -46,7 +46,12 @@ section {
 i{
     color: #fff;
 }
-
+.icon{
+    height: auto;
+        width: 5%;
+        margin-right: 0.2em;
+        margin-bottom: 0.25em;
+}
 @media (max-width: 768px) {
     .row>* {
         flex-shrink: 0;
@@ -59,4 +64,14 @@ i{
     .main-img {
         font-size: 100%;
     }
+
+}
+
+@media (max-width:414) {
+    .icon {
+            height: auto;
+            width: 5%;
+            margin-right: 0.2em;
+            margin-bottom: 0.25em;
+        }
 }
