@@ -15,6 +15,8 @@ class NewsForm(forms.ModelForm):
             'content': forms.Textarea(attrs={"class": "form-control"}),
             'is_published': forms.CheckboxInput(attrs={"class": "form-check-input"}),
             'category': forms.Select(attrs={"class": "form-select"}),
+            
+            
         }
         
     def clean_title(self):
