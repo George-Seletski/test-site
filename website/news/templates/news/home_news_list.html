@@ -5,7 +5,12 @@
 <div class="album mt-3">
   <div class="container">
           <div class="card mb-4 text-bg-dark">
+             {% if news_last.photo %}
             <img src="{{ news_last.photo.url }}" class="bd-placeholder-img card-img-top rounded" width="100%" height="50%" alt="#" />
+             {% else %}
+                  <img src="https://picsum.photos/500/280" class="bd-placeholder-img card-img-top" width="100%" alt="#" />
+            
+                {% endif %}
               <div class="card-img-overlay">
                   <div class="card-body ">
                         <div class="d-flex justify-content-between align-items-center" >
@@ -20,7 +25,7 @@
             </div>  
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
-        {% for item in news %}
+        {% for item in news_all %}
           <div class="col">
             <div class="card shadow-sm" style="background-color:#171717; color:#fff; border:1px solid #272727; height: 100%; ">
                 {% if item.photo %}

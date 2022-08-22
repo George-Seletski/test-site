@@ -16,9 +16,9 @@
                     <img src="https://picsum.photos/1500/500" class="img-fluid rounded d-block" alt="#" />
                 {% endif %} </div>            
               <div class="card-body">
-                <h4 class="card-title">{{ news_item.title }}
-                </h4>
-                 <span class="card-text" style="color: grey; font-size: 15px;">{{ news_item.created_at|date:'Y-m-d H:m' }}</span>
+               
+               <h4 class="card-title mt-3 mb-1" style=" font-weight:bold; font-size:200%; color: #fff;">{{ news_item.title }}
+                 <span class="card-text" style="margin-left: 0.5em;color: grey; font-size: 15px;">{{ news_item.created_at|date:'Y m d H:m' }}</span></h4>
                  <h3><span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ news_item.category }}</span>
                 </h3>
                 

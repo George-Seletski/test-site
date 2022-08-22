@@ -57,15 +57,15 @@ class ViewNews(DetailView):
         return context
 
 
-class CreateNews(CreateView):
-    form_class = NewsForm
-    template_name = 'news/add_news.html'
-    success_url = reverse_lazy('home')
+ class CreateNews(CreateView):
+     form_class = NewsForm
+     template_name = 'news/add_news.html'
+     success_url = reverse_lazy('home')
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        return context
+     def get_context_data(self, **kwargs):
+         context = super().get_context_data(**kwargs)
+         context['categories'] = Category.objects.all()
+         return context
     
 
 # def index(request):
@@ -97,18 +97,18 @@ class CreateNews(CreateView):
 #     return render(request, 'news/view_news.html', {"news_item": news_item, 'categories': categories,})
     
 # def add_news(request):
-#     categories = Category.objects.all()
-#     if request.method == 'POST':
-#         form = NewsForm(request.POST)
-#         if form.is_valid():
-#             # print(form.cleaned_data)
-#             # news = News.objects.create(**form.cleaned_data)
-#             news = form.save()
-#             return redirect(news)
+#      categories = Category.objects.all()
+#      if request.method == 'POST':
+#          form = NewsForm(request.POST, request.FILES)
+#          if form.is_valid():
+#              # print(form.cleaned_data)
+#              # news = News.objects.create(**form.cleaned_data)
+#              news = form.save()
+#              return redirect(news)
             
-#     else:
-#         form = NewsForm()
-#     return render(request, 'news/add_news.html', {'form': form, 'categories': categories,})
+#      else:
+#          form = NewsForm()
+#      return render(request, 'news/add_news.html', {'form': form, 'categories': categories,})
 
 
 def about(request):
