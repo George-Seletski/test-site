@@ -8,15 +8,14 @@ import re
 class NewsForm(forms.ModelForm):
     class Meta:
         model = News
-        fields = '__all__'
-        # fields = ['title', 'content', 'is_published', 'category', 'photo']
+        #fields = '__all__'
+        fields = ['title', 'content', 'is_published', 'category', 'photo']
         widgets = {
             'title': forms.TextInput(attrs={"class": "form-control" }),
             'content': forms.Textarea(attrs={"class": "form-control"}),
             'is_published': forms.CheckboxInput(attrs={"class": "form-check-input"}),
             'category': forms.Select(attrs={"class": "form-select"}),
-            
-            
+            'photo': forms.ClearableFileInput(attrs={"class":"form-label"}), 
         }
         
     def clean_title(self):

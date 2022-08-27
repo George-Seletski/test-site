@@ -74,4 +74,7 @@ i{
             margin-right: 0.2em;
             margin-bottom: 0.25em;
         }
+        .btn{
+            width: 5em;
+        }
 }

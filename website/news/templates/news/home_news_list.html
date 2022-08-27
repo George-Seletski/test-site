@@ -13,12 +13,15 @@
                 {% endif %}
               <div class="card-img-overlay">
                   <div class="card-body ">
+                        <h3></h3>
                         <div class="d-flex justify-content-between align-items-center" >
-                            <h1 class="card-title text-left main-img" style="font-weight: 900; ">{{ news_last.title }}</h1>
-                          <h3><span  class=" badge bg-secondary rounded p-1">{{ news_last.created_at|date:'Y-m-d H:m' }}</span></h3>
+                            <h1 class="card-title text-left main-img" style="font-weight: 900; ">{{ news_last.title }}
+                            </h1>
+                          <h1><span  class="badge rounded p-1" style="font-size: 0.5em;">{{ news_last.created_at|date:'d.m.Y' }}</span></h1>
                         </div>
                         <div class="d-flex justify-content-between align-items-center" >
-                              <a href="{{ news_last.get_absolute_url }}" class="btn btn-md btn-outline-secondary" style="color:#fff; border: 1px solid #6c757D; background-color:#6c757D;">View</a>
+                          
+                              <a href="{{ news_last.get_absolute_url }}" class="btn btn-md btn-outline-secondary" style="color:#fff;">View</a>
                             </div>
                         </div>
                   </div>
@@ -36,7 +39,7 @@
                 {% endif %}
 
                 <div class="card-body" >
-                      <h4 class="card-title">{{ item.title }}</h4>
+                      <h4 class="card-title" style="font-weight:bold;">{{ item.title }}</h4>
                       <!--<span class="card-text" style="color: grey; font-size: 15px;">{{ item.created_at|date:'Y-m-d H:m' }}</span>-->
                       <h4>
                         <span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ item.category }}</span>
@@ -44,8 +47,8 @@
                       <p class="card-text" >{{ item.content|safe|linebreaksbr|truncatewords:20 }}</p>
                    
                  <div class="d-flex justify-content-between align-items-center" >
-                        <a href="{{ item.get_absolute_url }}" class="btn btn-sm btn-outline-secondary">View</a>
-                        <span class="text-muted" style="">{{ item.created_at|date:'Y-m-d H:m' }}</span>
+                        <a href="{{ item.get_absolute_url }}" class="btn btn-sm btn-outline-secondary" style="color:#fff;">View</a>
+                        <span class="text-muted" style="color:#fff;">{{ item.created_at|date:'d.m.Y' }}</span>
                       </div>
                 </div>
             </div>
