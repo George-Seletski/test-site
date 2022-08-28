@@ -4,13 +4,16 @@
 <section class="container">
 <div class="album mt-3">
   <div class="container">
+         <a href="{{ news_last.get_absolute_url }}">
           <div class="card mb-4 text-bg-dark">
+       
              {% if news_last.photo %}
             <img src="{{ news_last.photo.url }}" class="bd-placeholder-img card-img-top rounded" width="100%" height="50%" alt="#" />
              {% else %}
                   <img src="https://picsum.photos/500/280" class="bd-placeholder-img card-img-top" width="100%" alt="#" />
             
                 {% endif %}
+      
               <div class="card-img-overlay">
                   <div class="card-body ">
                         <h3></h3>
@@ -19,14 +22,14 @@
                             </h1>
                           <h1><span  class="badge rounded p-1" style="font-size: 0.5em;">{{ news_last.created_at|date:'d.m.Y' }}</span></h1>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center" >
+                        {% comment %} <div class="d-flex justify-content-between align-items-center" >
                           
-                              <a href="{{ news_last.get_absolute_url }}" class="btn btn-md btn-outline-secondary" style="color:#fff;">View</a>
-                            </div>
+                              <a  class="btn bg-dark btn-md btn-outline-secondary" style=" font-size:150%; color:#fff;">View</a>
+                            </div> {% endcomment %}
                         </div>
                   </div>
             </div>  
-
+         </a>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
         {% for item in news_all %}
           <div class="col">
