@@ -12,6 +12,7 @@ from django.urls import reverse_lazy
 
 from .models import News, Category
 from .forms import NewsForm 
+# from .utils import MyMixin
 
 class HomeNews(ListView):
     model = News

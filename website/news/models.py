@@ -14,6 +14,7 @@ class News(models.Model):
     photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True, verbose_name='Photo')
     is_published = models.BooleanField(default=True, verbose_name='Published')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Category')
+    views = models.IntegerField(default=0)
 
     #id -INT
     #title -VARCHAR
