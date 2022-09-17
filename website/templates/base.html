@@ -19,6 +19,17 @@
  
         {% block content %} CONTENT{% endblock content %}
 
+
+
+        <nav style="margin-left: 1.3em;">
+        <ul class="pagination pagination-sm">
+          {% for p in page_obj.paginator.page_range %}
+           <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+          {% endfor %}
+         
+        </ul>
+      </nav>
+
     </div>
 
     
