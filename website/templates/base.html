@@ -19,16 +19,36 @@
  
         {% block content %} CONTENT{% endblock content %}
 
+{% if is_paginated %}
+  <ul class="pagination pagination-sm"  style="margin-left: 1.3em;">
+    {% if page_obj.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="page-item active"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% else %}
+        <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="page-item disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
 
-
-        <nav style="margin-left: 1.3em;">
+       <!-- <nav style="margin-left: 1.3em;">
         <ul class="pagination pagination-sm">
           {% for p in page_obj.paginator.page_range %}
            <li class="page-item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
           {% endfor %}
          
         </ul>
-      </nav>
+      </nav>-->
 
     </div>
 
