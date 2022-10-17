@@ -26,9 +26,9 @@
                  <h4><span class="badge bg-secondary" style=" margin:10px 0 0px 0;">{{ news_item.category }}</span>
                 </h4>
                 <p class="card-text" style="color: white;">{{ news_item.content|safe|linebreaksbr}}</p>
-                <p>
+                {% comment %} <p>
                    <h5 style="color: #fff; text-decoration: underline;">Views: {{news_item.views}}</h5>
-                </p>
+                </p> {% endcomment %}
               </div>
             </div>
           </div>
