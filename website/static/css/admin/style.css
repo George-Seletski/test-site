@@ -1,3 +1,9 @@
-#header{
-    background-color: #696A88;
+#header {
+    background-color: #171717;
+}
+body{
+    background: #171717;
+}
+div.breadcrumbs{
+    background-color: #171717;
 }

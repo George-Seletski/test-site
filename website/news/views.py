@@ -1,4 +1,6 @@
 
+from django.conf import settings
+from django.shortcuts import redirect
 from msilib.schema import Class
 from pyexpat import model
 from re import template
@@ -55,6 +57,8 @@ class ViewNews(DetailView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+
 
 
 # class CreateNews(CreateView):
