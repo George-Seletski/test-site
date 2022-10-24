@@ -43,11 +43,6 @@ section {
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
 }
-.card-title{
-    color: #fff;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
 i{
     color: #fff;
 }
@@ -72,3 +67,14 @@ i{
 
 }
 
+@media (max-width:414) {
+    .icon {
+            height: auto;
+            width: 5%;
+            margin-right: 0.2em;
+            margin-bottom: 0.25em;
+        }
+        .btn{
+            width: 5em;
+        }
+}
