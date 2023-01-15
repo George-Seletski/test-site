@@ -15,10 +15,10 @@
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style='background-color: #171717; '>
                 {% for item_category in categories %}
                   <li>
-                    <a class="dropdown-item" href="{% url 'category' item_category.pk %}">{{ item_category.title }}</a>
+                    <a style='color: #FFFFFF;'class="dropdown-item" href="{% url 'category' item_category.pk %}">{{ item_category.title }}</a>
                   </li>
                 {% endfor %}
               </ul>
