@@ -45,3 +45,13 @@ from django.db import connection
 ## Inspiration
 
 - [ZenBlog Bootstrap Template Demo](https://bootstrapmade.com/demo/ZenBlog/)
+
+
+
+## Plans
+* Add to post template:
+  *  Author Title
+  *  Date Title
+  *  comments
+  
+  
